@@ -1,0 +1,18 @@
+[
+  {
+    "id": "doc_refund_policy",
+    "title": "Refund and Billing Policy",
+    "content": "AcmeCloud offers a full 30-day money-back guarantee on annual Starter and Pro plans. Refund requests must be submitted within 30 calendar days of the initial invoice date through the billing portal. Enterprise custom contracts follow SLA terms."
+  },
+  {
+    "id": "doc_sla_uptime",
+    "title": "Service Level Agreement",
+    "content": "AcmeCloud guarantees 99.95% monthly uptime for Pro tier and 99.99% monthly uptime for Enterprise tier. Scheduled maintenance windows occur on Sundays at 02:00 UTC and are announced 72 hours in advance."
+  },
+  {
+    "id": "doc_auth_mfa",
+    "title": "Authentication and MFA Security",
+    "content": "All administrative accounts must enable multi-factor authentication using TOTP or FIDO2 hardware keys. API tokens expire automatically after 90 days and must be stored in environment variables rather than source control."
+  }
+]
+
