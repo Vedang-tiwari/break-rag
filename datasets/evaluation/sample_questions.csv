@@ -1,0 +1,5 @@
+test_id,category,question,ground_truth,expected_document_ids,expected_behavior,metadata
+eval_csv_001,billing,What is AcmeCloud's refund policy for annual Starter and Pro plans?,AcmeCloud offers a full 30-day money-back guarantee on annual Starter and Pro plans.,doc_refund_policy,answer_accurately,"{""source"": ""csv""}"
+eval_csv_002,sla,When do scheduled maintenance windows occur?,Scheduled maintenance windows occur on Sundays at 02:00 UTC and are announced 72 hours in advance.,doc_sla_uptime,answer_accurately,"{""source"": ""csv""}"
+eval_csv_003,api,What HTTP status code is returned when API rate limits are exceeded?,HTTP 429 with a Retry-After header.,doc_rate_limits,answer_accurately,"{""source"": ""csv""}"
+
