@@ -1,0 +1,79 @@
+{
+  "dataset_name": "breakrag_sample_eval",
+  "version": "1.0",
+  "cases": [
+    {
+      "test_id": "eval_001",
+      "category": "billing",
+      "question": "What is AcmeCloud's refund policy for annual Starter and Pro plans?",
+      "ground_truth": "AcmeCloud offers a full 30-day money-back guarantee on annual Starter and Pro plans if requested within 30 calendar days of the initial invoice date through the billing portal.",
+      "expected_document_ids": ["doc_refund_policy"],
+      "expected_behavior": "answer_accurately",
+      "metadata": {"difficulty": "easy"}
+    },
+    {
+      "test_id": "eval_002",
+      "category": "sla",
+      "question": "What monthly uptime SLA does AcmeCloud guarantee for Pro and Enterprise tiers?",
+      "ground_truth": "AcmeCloud guarantees 99.95% monthly uptime for Pro tier and 99.99% monthly uptime for Enterprise tier.",
+      "expected_document_ids": ["doc_sla_uptime"],
+      "expected_behavior": "answer_accurately",
+      "metadata": {"difficulty": "easy"}
+    },
+    {
+      "test_id": "eval_003",
+      "category": "security",
+      "question": "What authentication and token expiration rules apply to administrative accounts?",
+      "ground_truth": "Administrative accounts must enable multi-factor authentication using TOTP or FIDO2 hardware keys, and API tokens expire automatically after 90 days.",
+      "expected_document_ids": ["doc_auth_mfa"],
+      "expected_behavior": "answer_accurately",
+      "metadata": {"difficulty": "easy"}
+    },
+    {
+      "test_id": "eval_004",
+      "category": "security",
+      "question": "How does AcmeCloud encrypt customer data at rest and in transit?",
+      "ground_truth": "Customer data at rest is encrypted using AES-256-GCM with per-tenant keys managed in KMS, and data in transit uses TLS 1.3.",
+      "expected_document_ids": ["doc_encryption"],
+      "expected_behavior": "answer_accurately",
+      "metadata": {"difficulty": "easy"}
+    },
+    {
+      "test_id": "eval_005",
+      "category": "api",
+      "question": "What are the API rate limits for Standard and Pro API keys?",
+      "ground_truth": "Standard API keys allow 120 requests per minute and Pro tier keys allow 600 requests per minute, returning HTTP 429 when exceeded.",
+      "expected_document_ids": ["doc_rate_limits"],
+      "expected_behavior": "answer_accurately",
+      "metadata": {"difficulty": "easy"}
+    },
+    {
+      "test_id": "eval_006",
+      "category": "compliance",
+      "question": "Which region hosts EU customer data for GDPR compliance?",
+      "ground_truth": "EU customer data remains pinned to eu-central-1 for GDPR compliance.",
+      "expected_document_ids": ["doc_deployment_regions"],
+      "expected_behavior": "answer_accurately",
+      "metadata": {"difficulty": "easy"}
+    },
+    {
+      "test_id": "eval_007",
+      "category": "multi_hop",
+      "question": "Which team handles Severity-1 security incidents and how quickly do they acknowledge them?",
+      "ground_truth": "The Cloud Security Response Team (CSRT) handles Severity-1 security incidents via PagerDuty channel #sec-sev1 and acknowledges them within 15 minutes.",
+      "expected_document_ids": ["doc_multihop_team", "doc_multihop_sla_escalation"],
+      "expected_behavior": "synthesize_multi_hop",
+      "metadata": {"difficulty": "medium"}
+    },
+    {
+      "test_id": "eval_008",
+      "category": "unanswerable",
+      "question": "What is the price of AcmeCloud's Quantum GPU Serverless add-on?",
+      "ground_truth": "Information not available in the knowledge base; the system should abstain.",
+      "expected_document_ids": [],
+      "expected_behavior": "abstain",
+      "metadata": {"difficulty": "medium"}
+    }
+  ]
+}
+
