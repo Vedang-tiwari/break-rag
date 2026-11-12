@@ -12,4 +12,5 @@ results/
 *.sqlite
 *.sqlite3
 .env
+instruction.md
 
